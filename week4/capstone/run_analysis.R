@@ -1,17 +1,18 @@
 ## Capstone Project for "Getting and Cleaning Data" -- Erix Xie 
 
 
-
 ## Working directory should be set as "~/UCI HAR Dataset"
-
+# when working directory is set up, run this function to get output
+my_analysis_result() 
 
 ## this function below ONLY works when the working directory is well set
 my_analysis_result <- function(){
   merged_df <- my_analysis()
   result <- my_analysis_2(merged_df)
-  #write.table(result,file = "second_tidy_dataset.csv",sep = ",",row.names = FALSE) # output as .csv
+  # pls comment out undesired write.table lines
+  write.table(result,file = "second_tidy_dataset.csv",sep = ",",row.names = FALSE) # output as .csv
   write.table(result,file = "second_tidy_dataset.txt",row.names = FALSE) # output as .txt
-  # return(result) # uncomment if necessary
+  return(result) # uncomment if necessary
 }
 
 
